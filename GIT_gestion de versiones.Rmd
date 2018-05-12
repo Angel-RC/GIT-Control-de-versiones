@@ -1,0 +1,114 @@
+---
+title: "GIT"
+output: html_notebook
+---
+Para configurar GIT:
+```{r, eval=FALSE}
+# Te muestra la configuración actual
+git config --list
+
+# Para ver una caracteristica de la configuración actual (como el nombre)
+git config user.name
+
+# Estableces tu nombre y correo
+git config --global user.name "Ángel R"
+git config --global user.email angel.r.chicote@gmail.com
+
+# Para buscar ayuda con algún comando (como config)
+git help config
+```
+
+Para iniciar un proyecto con GIT:
+```{r,eval=FALSE}
+# Para un proyecto local ir al directorio y alli
+git init
+# Para copiar un proyecto existente
+git clone https://github.com/libgit2/libgit2
+# Para cambiarle el nombre a "copia"
+git clone https://github.com/libgit2/libgit2 copia
+
+# Para añadir ficheros al siguiente commit 
+git add fichero que se ha modificado
+
+# Para ver en que estado estan los archivos
+git status
+
+# Otra forma de verlo (los archivos que aparecen e la columna de la izquierda estan preparados y los de la derecha estan sin peparar)
+git status -s
+
+```
+
+Para ignorar archivos usar ficheros .gitignore
+```{r, eval=FALSE}
+# En esta ruta veras varios gitignore en función del lenguaje con el que estes.
+https://github.com/github/gitignore
+
+# Ejemplo de un gitignore:
+
+# ignora los archivos terminados en .a
+*.a
+# pero no lib.a, aun cuando había ignorado los archivos terminados en .a en la linea
+anterior
+!lib.a
+# ignora unicamente el archivo TODO de la raiz, no subdir/TODO
+/TODO
+# ignora todos los archivos del directorio build/
+build/
+# ignora doc/notes.txt, pero este no doc/server/arch.txt
+doc/*.txt
+# ignora todos los archivos .txt el directorio doc/
+doc/**/*.txt
+```
+
+Para hacer modificaciones
+```{r, eval=FALSE}
+# Para hacer commit de ficheros añadidos
+git commit -m "Este commit es una prueba"
+
+# Si quiero commitear ficheros aun sin haberlos añadido
+git commit -a -m 'Otra prueba'
+
+# Para borrar fichero
+git rm archivo.pdf
+
+# Para borrar un fichero que ya ha sido preparado 
+git rm archivo.pdf -f
+
+# Si olvidaste añadir algo al gitignore y quieres que GIT deje de hacer un seguimiento de un fichero, pero manteniendolo en tu disco duro
+git rm --cached archivo.pdf
+
+# Para modificar el nombre de ficheros
+git mv nombre_1.pdf nombre_2.pdf
+```
+
+Para hacer un seguimiento del proyecto y de los cambios realizados
+```{r, eval=FALSE}
+# Para ver el historial de commit realizados
+git log
+# Para darle el formato que quieras 
+git log --pretty=format:"%h - %an, %ar : %s"
+```
+
+Las distintas opciones disponibles para el formato son:
+
+
+|Opción| Descripción de la salida|
+| ----| ----- |
+|%H  | Hash de la confirmación|
+|%h  | Hash de la confirmación abreviado|
+|%T  | Hash del árbol|
+|%t  | Hash del árbol abreviado|
+|%P  | Hashes de las confirmaciones padre|
+|%p  | Hashes de las confirmaciones padre abreviados|
+|%an |  Nombre del autor|
+|%ae |  Dirección de correo del autor|
+|%ad |  Fecha de autoría (el formato respeta la opción -–date)|
+|%ar |  Fecha de autoría, relativa|
+|%cn |  Nombre del confirmador|
+|%ce |  Dirección de correo del confirmador|
+|%cd |  Fecha de confirmación|
+|%cr |  Fecha de confirmación, relativa|
+|%s  | Asunto|
+
+
+
