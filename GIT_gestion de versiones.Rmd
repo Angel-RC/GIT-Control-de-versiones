@@ -92,6 +92,7 @@ git log --pretty=format:"%h - %an, %ar : %s" --graph
 ```
 
 Algunas opciones para limitar la salida del log:
+
 |Opción               | Descripción|
 | ----| ----- |
 |-(n)                |Muestra solamente las últimas n confirmaciones|
@@ -100,6 +101,7 @@ Algunas opciones para limitar la salida del log:
 |--author               | Muestra solo aquellas confirmaciones cuyo autor coincide con la cadena especificada.|
 |--committer               | Muestra solo aquellas confirmaciones cuyo confirmador coincide con la cadena especificada.|
 |-S                |Muestra solo aquellas confirmaciones que añadan o eliminen código que corresponda con la cadena especificada.|
+
 Algunas opciones para log son:
 
 
